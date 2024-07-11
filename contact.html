@@ -12,52 +12,51 @@
   <header>
     <div class="container">
       <nav>
-        <ul>
+        <ul id="sidemenu">
           <li><a href="index.html">Home</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="projects.html">Projects</a></li>
           <li><a href="blog.html">Blog</a></li>
+          <i class="fas fa-solid fa-xmark" onclick="closemenu()"></i>
         </ul>
+        <i class="fas fa-solid fa-bars" onclick="openmenu()"></i>
       </nav>
     </div>
   </header>
-  <h1>Contact Me</h1>
-  <div class="contact-container">
-    <div class="wrapper">
-      <a href="https://x.com/NightRavenNeko" target="_blank">
-        <div class="button">
-          <div class="icon">
-            <i class="fa-brands fa-twitter"></i>
+
+  <div id="contact">
+    <div class="contact-container-2">
+      <div class="row">
+        <div class="contact-left">
+         <h1 class="sub-title">Contact Me</h1> 
+          <p><i class="fa-solid fa-paper-plane"></i>clara.ogus@outlook.com</p>
+          <p><i class="fa-solid fa-phone"></i>206-735-0452</p>
+          <div class="social-icons">
+            <a href="https://x.com/NightRavenNeko" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://github.com/cooogus" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/clara-ogus-a80646187/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
           </div>
+          <a href="images/resume.pdf" download target="_blank"class="resume">Resume</a>
         </div>
-      </a>
-    </div>
-    <div class="wrapper">
-      <a href="https://github.com/cooogus" target="_blank">
-        <div class="button">
-          <div class="icon">
-            <i class="fa-brands fa-github"></i>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div class="wrapper">
-      <a href="https://www.linkedin.com/in/clara-ogus-a80646187/" target="_blank">
-        <div class="button">
-          <div class="icon">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </div>
-        </div>
-      </a>
+      </div>
     </div>
   </div>
-  <!-- target = "_blank" makes it so you open a new webpage when clicking the link -->
-  <div class="resume">
-    <a style="text-decoration: none" href="file:///Users/cogus/Documents/Important%20Docs/resume.pdf"
-      target="_blank">
-      <h3>Resume</h3>
-    </a>
-  </div>
+
+  <!-- javascript functionality -->
+  <script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+      // whenever right is 0 the menu will be visible
+      sidemenu.style.right = "0";
+    }
+
+    function closemenu(){
+      sidemenu.style.right = "-200px";
+    }
+
+  </script>
+  
 </body>
 
 </html>

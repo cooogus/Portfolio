@@ -2,12 +2,16 @@ body {
   margin: 0;
   font-family: 'Work Sans', sans-serif;
   font-weight: 400;
+  background-color: #f7eddd;
 }
+
 
 .container {
   width: 80%;
   margin: 0 auto;
 }
+
+/* nav css */
 
 header {
   background: #7fb685;
@@ -26,6 +30,7 @@ header::after {
 
 nav {
   float: right;
+  margin-bottom: 10px;
 }
 
 /* ul is unordered list */
@@ -74,6 +79,7 @@ nav a:hover::before {
 
 h1 {
   text-align: center;
+  color: #2b2b2b;
 }
 
 /* this is for the logo idea in the top left */
@@ -83,44 +89,16 @@ h1 {
   margin-top: 0px;
 } */
 
-.contact-container{
-  display: grid;
-  place-items: center;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(315deg, #ffffff 0%, #d7e1ec, 74%);
-}
-
-.button{ 
-  display: inline-block;
-  width: 60px;
-  height: 60px;
-  background-color: white;
-  border-radius: 50px;
-  line-height: 60px;
-  text-align: center;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
-}
-
-.wrapper .button .icon{
-  font-size: 20px;
-  color: #426A5A;
-
-}
-
-.wrapper .button:hover{
-  width: 100px;
-  transition: 0.7s;
-}
-
 h3 {
-  color: black;
+  color: #2b2b2b;;
   text-align: center;
 }
 
 h3:hover {
   color: #444;
 }
+
+/* blog page */
 
 .blog {
   margin: 0px;
@@ -129,48 +107,389 @@ h3:hover {
   font-family: sans-serif;
 }
 
-.card-container {
+#blog {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 100px;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px;
 }
 
-.card {
-  width: 325px;
-  background-color: #f0f0f0;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+.blog-heading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.blog-heading span{
+  color: #426A5A;
+}
+
+.blog-heading h2{
+  font-size: 2.4rem;
+  color: #2b2b2b;
+  font-weight: 600;
+}
+
+.blog-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px;
+  flex-wrap: wrap;
+}
+
+.blog-box{
+  width: 350px;
+  background-color: white;
+  border: 1px solid #ececec;
   margin: 20px;
 }
 
-.card img{
+.blog-img{
   width: 100%;
   height: auto;
 }
 
-.card-content {
-  padding: 16px;
+.blog-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
-.card-content h4 {
-  font-size: 28px;
-  margin-bottom: 8px;
+.blog-text{
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
-.card-content p {
-  color:#666;
-  font-size: 15px;
-  line-height: 1.3;
+.blog-text span{
+  color: #426A5A;
+  font-size: 0.9rem;
 }
 
-.card-content .btn{
-  display: inline-block;
-  padding: 8px 16px;
-  background-color: #333;
+.blog-text .blog-title{
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #272727;
   text-decoration: none;
-  border-radius: 4px;
-  margin-top: 16px;
-  color: #fff;
+  margin-top: 10px
+}
+
+.blog-text .blog-title:hover{
+  color: #426A5A;
+  transition: all ease 0.3s;
+}
+
+.blog-text p{
+  color: #9b9b9b;
+  font-size: 0.9rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 20px 0px;
+}
+
+.blog-text a{
+  color: #0f0f0f;
+  text-decoration: none;
+}
+
+.blog-text a:hover{
+  color: #426A5A;
+  transition: all ease 0.3s;
+}
+
+/* blog stuff for other screens */
+
+@media(max-width:1250px){
+  .blog-box{
+    width: 300px;
+  }
+}
+
+@media(max-width:1100px){
+  .blog-box{
+    width: 70%;
+  }
+}
+
+@media(max-width:550px){
+  .blog-box{
+    margin: 20px 10px;
+    width: 100%;
+  }
+
+  #blog{
+    padding: 20px
+  }
+}
+
+
+
+/* about page */
+
+#about-me {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 80px 0px;
+}
+
+.about-container {
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  border-radius: 10px;
+  margin: 0px auto;
+  color: #2b2b2b;
+}
+
+.about-image {
+  width: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.about-image img{
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.about-image:hover img{
+  transform: scale(1.1);
+}
+
+.about-content{
+  width: 50%;
+  margin-left: 40px;
+}
+
+.about-content h2{
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.about-content p{
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.social-links{
+  margin-bottom: 20px;
+}
+
+.social-links a{
+  display: inline-block;
+  margin-right: 10px;
+  color: #2b2b2b;;
+  font-size: 30px;
+  transition: transform 0.5s;
+}
+
+.social-links a:hover{
+  color: #454444;
+  transform: translateY(-5px);
+}
+
+@media screen and (max-width: 768px){
+  .container{
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-image, .about-content{
+    width:100%;
+  }
+  .about-content{
+    padding: 0px;
+    margin-top: 50px;
+    margin-left: 0px;
+  }
+}
+
+/* my projects page */
+
+.portfolio{
+  padding: 50px 0;
+
+}
+
+.work-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 40px;
+  margin-top: 50px;
+}
+
+.work{
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.work img{
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s;
+}
+
+.layer{
+  /* the width tag below was making the text overflow out of the image */
+  /* width: 100%; */
+  height: 0;
+  background: linear-gradient(rgba(0,0,0,0.6), #DDAE7E);
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  transition: height 0.5s;
+}
+
+.layer h4{
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.layer a{
+  margin-top: 20px;
+  color: #DDAE7E;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 60px;
+  background: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.work:hover img{
+  transform: scale(1.1);
+}
+
+.work:hover .layer{
+  height: 100%;
+}
+
+/* contact page */
+.contact-left{
+  flex-basis: 35%;
+}
+
+.contact-right{
+  flex-basis: 60%;
+}
+
+.contact-left p{
+  margin-top: 30px;
+}
+
+.contact-left p i{
+  color: #426A5A;
+  margin-right: 15px;
+  font-size: 25px;
+}
+
+.social-icons {
+  margin-top: 30px;
+}
+
+.social-icons a{
+  text-decoration: none;
+  font-size: 30px;
+  margin-right: 15px;
+  color: #2b2b2b;;
+  display: inline-block;
+  transition: transform 0.5s;
+}
+
+.social-icons a:hover{
+  color: #454444;
+  /* move icon up by 5px when hovered over */
+  transform: translateY(-5px);
+}
+
+.resume{
+  display: inline-block;
+  background: #426A5A;
+  padding: 15px 32px;
+  text-decoration: none;
+  color: white;
+  border-radius: 17px;
+  margin: 4px 2px;
+  margin-top: 25px;
+}
+
+.resume:hover{
+  color: #2b2b2b;;
+}
+
+.contact-container-2 {
+  text-align: center;
+  color: #2b2b2b;
+}
+
+/* css for small screen */
+nav .fas{
+  display: none;
+}
+
+@media only screen and (max-width: 600px){
+  nav .fas{
+    display: block;
+    font-size: 25px;
+    margin-top: 10px;
+  }
+
+  nav ul{
+    background: #7fb685;
+    position: fixed;
+    top: 0;
+    /* this line of -200px is to hide the menu bar when x-ed out */
+    right: -200px;
+    width: 200px;
+    height: 100vh;
+    padding-top: 50px;
+    z-index: 2;
+    transition: right 0.5s;
+  }
+
+  nav ul li{
+    display: block;
+    margin: 25px;
+  }
+
+  nav ul .fas{
+    color: #444;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
+  }
+
+  nav i{
+    color: #444;
+  }
+
+  .contact-left{
+    flex-basis: 100%;
+  }
 }

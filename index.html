@@ -5,6 +5,7 @@
 <head>
   <title>Clara's Website</title>
   <link href="style.css" rel="stylesheet" type="text/css">
+  <script src="https://kit.fontawesome.com/9c03ce4cdc.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -13,12 +14,14 @@
 
       <!-- <img width="100px" src="cat-solid.svg" alt="logo" class="logo"> -->
       <nav>
-        <ul>
+        <ul id="sidemenu">
           <li><a href="index.html">Home</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="projects.html">Projects</a></li>
           <li><a href="blog.html">Blog</a></li>
+          <i class="fas fa-solid fa-xmark" onclick="closemenu()"></i>
         </ul>
+        <i class="fas fa-solid fa-bars" onclick="openmenu()"></i>
       </nav>
     </div>
   </header>
@@ -31,7 +34,7 @@
     <section class="about-me">
       <div class="about-container">
         <div class="about-image">
-          <img src="images/about-me.jpeg">
+          <img src="images/about.JPG" width="auto">
         </div>
         <div class="about-content">
           <h2>About Me</h2>
@@ -41,13 +44,28 @@
             to in life from my programming projects to the latest book I'm reading!
           </p>
           <div class="social-links">
-            <a href=""><i class="fa-brands fa-twitter"></i></a>
-            <a href=""><i class="fa-brands fa-github"></i></a>
-            <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://x.com/NightRavenNeko" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://github.com/cooogus" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/clara-ogus-a80646187/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
           </div>
         </div>
+      </div>
     </section>
   </main>
+<!-- javascript functionality -->
+  <script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+      // whenever right is 0 the menu will be visible
+      sidemenu.style.right = "0";
+    }
+
+    function closemenu(){
+      sidemenu.style.right = "-200px";
+    }
+
+  </script>
 </body>
 
 </html>

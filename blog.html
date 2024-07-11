@@ -4,54 +4,98 @@
 <head>
     <title>Clara's Blog</title>
     <link href="style.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 
 <body>
-    <header>
-      <div class="container">
-        <nav>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="blog.html">Blog</a></li>
-          </ul>
-        </nav>
+  <header>
+    <div class="container">
+
+      <!-- <img width="100px" src="cat-solid.svg" alt="logo" class="logo"> -->
+      <nav>
+        <ul id="sidemenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <i class="fas fa-solid fa-xmark" onclick="closemenu()"></i>
+        </ul>
+        <i class="fas fa-solid fa-bars" onclick="openmenu()"></i>
+      </nav>
+    </div>
+  </header>
+
+    <!-- Blog Section -->
+   <section id="blog">
+    <div class="blog-heading">
+      <span>My Recent Posts</span>
+      <h2>Blog</h2>
+    </div>
+
+    <div class="blog-container">
+      <!-- latest read -->
+      <div class="blog-box">
+        <div class="blog-img">
+          <img src="images/book.jpeg">
+        </div>
+        <div class="blog-text">
+          <span>11 July 2023 / Latest Read</span>
+          <a href="#" class="blog-title">Random Sh*t Flying Through the Air by Jackson Ford</a>
+          <p>Teagan Frost’s life is finally back on track. Her role working for the government
+             as a psychokinetic operative is going well and she might even be on course for 
+             convincing her crush to go out with her. But, little does she know, 
+             that sh*t is about to hit the fan . . .</p>
+             <a href="#">Read More</a>
+        </div>
       </div>
-    </header>
-    <h1>Blog</h1>
-    <body class="blog page">
-    <div class="card-container">
-      <div class="card">
-        <img src="images/book.jpeg" width="100" height="100">
-        <div class="card-content">
-          <h4>Card 1</h4>
-          <p>My latest read is...</p>
-          <a href="" class="btn">Read More</a>
+      <!-- latest eat -->
+      <div class="blog-box">
+        <div class="blog-img">
+          <img src="images/food2.jpeg">
+        </div>
+        <div class="blog-text">
+          <span>10 July 2023 / Latest Eat</span>
+          <a href="#" class="blog-title">Geraldine's Counter Restaurant</a>
+          <p>In typical foodie fashion, I went out to brunch the other day to a little
+            Mom and Pop shop in the Columbia City district of Seattle. The interior was
+            pleasant and the food was amazing. I had possibly the best biscuit I have ever
+            had in my life.
+          </p>
+             <a href="#">Read More</a>
+        </div>
+      </div>
+      <!-- latest event -->
+      <div class="blog-box">
+        <div class="blog-img">
+          <img src="images/sf.jpeg">
+        </div>
+        <div class="blog-text">
+          <span>11 July 2023 / Latest Event</span>
+          <a href="#" class="blog-title">Day Trip to San Francisco</a>
+          <p>I recently went out to the great city of San Francisco with a few friends.
+            We try to go out and explore the area around Davis everyonce and a while
+            to just get a feel for the Bay Are beyond our little college town.
+          </p>
+             <a href="#">Read More</a>
         </div>
       </div>
     </div>
-    <div class="card-container">
-      <div class="card">
-        <img src="images/book.jpeg" width="100" height="100">
-        <div class="card-content">
-          <h4>Card 2</h4>
-          <p>My latest eat is...</p>
-          <a href="" class="btn">Read More</a>
-        </div>
-      </div>
-    </div>
-    <div class="card-container">
-      <div class="card">
-        <img src="images/book.jpeg" width="100" height="100">
-        <div class="card-content">
-          <h4>Card 3</h4>
-          <p>My latest event is...</p>
-          <a href="" class="btn">Read More</a>
-        </div>
-      </div>
-    </div>
-  </body>
+   </section>
+
+  <!-- javascript functionality -->
+  <script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+      // whenever right is 0 the menu will be visible
+      sidemenu.style.right = "0";
+    }
+
+    function closemenu(){
+      sidemenu.style.right = "-200px";
+    }
+
+  </script>
 </body>
 
 </html>

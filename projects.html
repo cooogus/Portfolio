@@ -2,24 +2,83 @@
 <html>
 
 <head>
-    <title>Clara's Projects</title>
-    <link href="style.css" rel="stylesheet" type="text/css">
+  <title>Clara's Projects</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <script src="https://kit.fontawesome.com/9c03ce4cdc.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <header>
-      <div class="container">
-        <nav>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="blog.html">Blog</a></li>
-          </ul>
-        </nav>
+  <header>
+    <div class="container">
+
+      <!-- <img width="100px" src="cat-solid.svg" alt="logo" class="logo"> -->
+      <nav>
+        <ul id="sidemenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <i class="fas fa-solid fa-xmark" onclick="closemenu()"></i>
+        </ul>
+        <i class="fas fa-solid fa-bars" onclick="openmenu()"></i>
+      </nav>
+    </div>
+  </header>
+
+  <div id="portfolio">
+    <div class="container">
+      <h1 class="sub-title">Projects</h1>
+      <div class="work-list">
+        <div class="work">
+          <img src="images/cafe.jpeg">
+          <div class="layer">
+            <h4>Cafe Study App</h4>
+            <p>This app allows students to track avaliability in
+              local cafe study spots. Check out my repository while
+              I continue to work on it.</p>
+            <a href="https://github.com/cooogus/study-sure" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+          </div>
+        </div>
+        <div class="work">
+          <img src="images/personal website.png">
+          <div class="layer">
+            <h4>Personal Website</h4>
+            <p>This is my personal website and you're looking at it right now.
+              If you'd like to look at the source code click the icon below.
+            </p>
+            <a href="https://github.com/cooogus/cooogus-cave" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+          </div>
+        </div>
+        <div class="work">
+          <img src="images/conversions.png">
+          <div class="layer">
+            <h4>Conversions Project</h4>
+            <p>This project was done for my intro to computer science class at UC Davis.
+              It converts one unit to the other based on user input.
+               Check out my repository.
+            </p>
+            <a href="https://github.com/cooogus/conversions" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+          </div>
+        </div>
       </div>
-    </header>
-    <h1>Projects</h1>
+    </div>
+  </div>
+
+  <!-- javascript functionality -->
+  <script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+      // whenever right is 0 the menu will be visible
+      sidemenu.style.right = "0";
+    }
+
+    function closemenu(){
+      sidemenu.style.right = "-200px";
+    }
+
+  </script>
+
 </body>
 
 </html>
