@@ -281,6 +281,25 @@ h3:hover {
   margin-bottom: 20px;
 }
 
+.book-content .title:hover{
+  color: #426A5A;
+  transition: all ease 0.3s;
+}
+
+.story-graph-acc{
+  text-decoration: none;
+  color: #2b2b2b;
+  display: inline-block;
+  transition: transform 0.5s;
+}
+
+
+.story-graph-acc:hover{
+  color: #454444;
+  /* move icon up by 5px when hovered over */
+  transform: translateY(-5px);
+}
+
 
 @media screen and (max-width: 768px){
   .container{
@@ -383,7 +402,7 @@ h3:hover {
 
 /* my projects page */
 
-.portfolio{
+#portfolio{
   padding: 50px 0;
 
 }
@@ -431,6 +450,7 @@ h3:hover {
 
 .layer h4{
   font-weight: 500;
+  font-size: 16px;
   margin-bottom: 20px;
 }
 
