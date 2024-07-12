@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <title>Clara's Website</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <script src="https://kit.fontawesome.com/9c03ce4cdc.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+
+      <nav>
+        <ul id="sidemenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <i class="fas fa-solid fa-xmark" onclick="closemenu()"></i>
+        </ul>
+        <i class="fas fa-solid fa-bars" onclick="openmenu()"></i>
+      </nav>
+    </div>
+  </header>
+
+  <section id="blog-post">
+    <div class="title">
+      <h1>Random Sh*t Flying Through the Air</h1>
+      <h1>By Jackson Ford</h1>
+    </div>
+    <div class="read-box">
+      <div class="pic">
+        <img src="images/book.jpeg">
+      </div>
+    </div>
+  </section>
+
+  <!-- javascript functionality -->
+  <script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+      // whenever right is 0 the menu will be visible
+      sidemenu.style.right = "0";
+    }
+
+    function closemenu(){
+      sidemenu.style.right = "-200px";
+    }
+
+  </script>
+</body>

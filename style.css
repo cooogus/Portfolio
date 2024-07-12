@@ -229,6 +229,27 @@ h3:hover {
   }
 }
 
+/* latest read blog page */
+.pic img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.pic{
+  width: 100%;
+  height: auto;
+}
+
+.read-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px;
+  flex-wrap: wrap;
+}
+
 
 
 /* about page */
@@ -291,7 +312,7 @@ h3:hover {
   display: inline-block;
   margin-right: 10px;
   color: #2b2b2b;;
-  font-size: 30px;
+  font-size: 40px;
   transition: transform 0.5s;
 }
 
