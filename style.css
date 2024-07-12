@@ -458,11 +458,11 @@ h3:hover {
   margin-top: 10px;
   color: #DDAE7E;
   text-decoration: none;
-  font-size: 18px;
-  line-height: 60px;
+  font-size: 16px;
+  line-height: 40px;
   background: white;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   text-align: center;
 }
