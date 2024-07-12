@@ -451,11 +451,11 @@ h3:hover {
 .layer h4{
   font-weight: 500;
   font-size: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .layer a{
-  margin-top: 20px;
+  margin-top: 10px;
   color: #DDAE7E;
   text-decoration: none;
   font-size: 18px;
@@ -538,7 +538,7 @@ nav .fas{
   display: none;
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 767px){
   nav .fas{
     display: block;
     font-size: 25px;
