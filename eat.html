@@ -1,69 +1,76 @@
 <!DOCTYPE html>
-<html>
-
-
+<html lang="en">
 <head>
-  <title>Clara's Website</title>
-  <link href="style.css" rel="stylesheet" type="text/css">
-  <script src="https://kit.fontawesome.com/9c03ce4cdc.js" crossorigin="anonymous"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-</head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clara — Latest Read</title> <!-- change per page -->
+  <meta name="description" content="Book notes by Clara." /> <!-- change per page -->
+  <link rel="icon" href="images/favicon.png" />
 
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://kit.fontawesome.com/9c03ce4cdc.js" crossorigin="anonymous" defer></script>
+  <script src="assets/js/site.js" defer></script>
+</head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header>
-    <div class="container">
-      <nav>
+    <div class="container nav">
+      <div class="brand"><a href="index.html#home">Clara</a></div>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="sidemenu">Menu</button>
+      <nav aria-label="Primary">
         <ul id="sidemenu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html#home">Home</a></li>
           <li><a href="projects.html">Projects</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <i class="fas fa-solid fa-xmark" onclick="closemenu()"></i>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="blog.html" aria-current="page">Blog</a></li>
         </ul>
-        <i class="fas fa-solid fa-bars" onclick="openmenu()"></i>
       </nav>
     </div>
   </header>
 
-  <main>
-    <h1>Latest Eat</h1>
-    <section class="book-review">
-      <div class="book-container">
-        <div class="book-image">
-          <img src="images/food2.jpeg" width="auto">
-        </div>
-        <div class="book-content">
-          <div class="title">
-            <h2>Geraldine's Counter Restaurant</h2>
-            <h4>Columbia City, Seattle</h4>
-            <h5>Date: 10 July 2024</h5>
-            <h5>Rating: 4 / 5</h5>
-          </div>
-          <a href="https://www.geraldinescounter.com/" target="_blank" class="story-graph-acc">The Menu</a>
-          <p>
-            In typical foodie fashion, I went out to brunch the other day to a little
-            Mom and Pop shop in the Columbia City district of Seattle. The interior was
-            pleasant and the food was amazing. I had possibly the best biscuit I have ever
-            had in my life. I enjoyed the chicken fried streak with a side biscuit and 
-            iced tea while my companion had their french toast with red plums, which changes daily.
-          </p>
-        </div>
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="blog.html">← Back to Blog</a>
+        </nav>
       </div>
     </section>
+
+    <article class="post">
+      <div class="container post-grid">
+        <aside class="cover">
+          <img src="images/food2.jpeg" alt="Plate with biscuit and brunch at Geraldine’s Counter in Seattle" loading="lazy" decoding="async" />
+        </aside>
+
+        <div>
+          <header class="meta-card">
+            <h1>Geraldine’s Counter</h1>
+            <p class="meta">Columbia City, Seattle · <time datetime="2024-07-10">July 10, 2024</time></p>
+            <div class="rating" aria-label="Rating: 4 out of 5">
+              <strong>Rating</strong>
+              <span class="stars" aria-hidden="true">★★★★☆</span>
+              <span class="muted">4 / 5</span>
+            </div>
+            <div class="actions">
+              <a class="btn" href="https://www.geraldinescounter.com/" target="_blank" rel="noopener"><i class="fa-solid fa-utensils"></i> View menu</a>
+            </div>
+          </header>
+
+          <div class="prose">
+            <p>In classic foodie fashion, I went out to brunch at a cozy mom‑and‑pop spot in Columbia City. The space is bright, friendly, and perfect for lingering over coffee.</p>
+            <p>I had the chicken‑fried steak with a side biscuit and iced tea; my companion went for the French toast with red plums (the fruit rotates daily). The biscuit was possibly the best I’ve ever had—flaky, buttery, and just the right size.</p>
+          </div>
+        </div>
+      </div>
+    </article>
   </main>
 
-  <!-- javascript functionality -->
-  <script>
-    var sidemenu = document.getElementById("sidemenu");
-
-    function openmenu() {
-      // whenever right is 0 the menu will be visible
-      sidemenu.style.right = "0";
-    }
-
-    function closemenu() {
-      sidemenu.style.right = "-200px";
-    }
-
-  </script>
+  <footer>
+    <div class="container">
+      <small>© <span id="year"></span> Clara. All rights reserved.</small>
+    </div>
+  </footer>
 </body>
+</html>

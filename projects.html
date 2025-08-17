@@ -1,92 +1,148 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <title>Clara's Projects</title>
-  <link href="style.css" rel="stylesheet" type="text/css">
-  <script src="https://kit.fontawesome.com/9c03ce4cdc.js" crossorigin="anonymous"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clara — Projects</title>
+  <meta name="description" content="Selected projects by Clara: mobile apps, web apps, and coursework." />
+  <link rel="icon" href="images/favicon.png" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://kit.fontawesome.com/9c03ce4cdc.js" crossorigin="anonymous" defer></script>
+  <script src="assets/js/site.js" defer></script>
 </head>
-
 <body>
-  <header>
-    <div class="container">
+  <a class="skip-link" href="#main">Skip to content</a>
 
-      <!-- <img width="100px" src="cat-solid.svg" alt="logo" class="logo"> -->
-      <nav>
+  <header>
+    <div class="container nav">
+      <div class="brand"><a href="index.html#home">Clara</a></div>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="sidemenu">Menu</button>
+      <nav aria-label="Primary">
         <ul id="sidemenu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="projects.html">Projects</a></li>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="projects.html" aria-current="page">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
           <li><a href="blog.html">Blog</a></li>
-          <i class="fas fa-solid fa-xmark" onclick="closemenu()"></i>
         </ul>
-        <i class="fas fa-solid fa-bars" onclick="openmenu()"></i>
       </nav>
     </div>
   </header>
 
-  <div id="portfolio">
-    <div class="container">
-      <h1 class="sub-title">Projects</h1>
-      <div class="work-list">
-        <div class="work">
-          <img src="images/cafe.png">
-          <div class="layer">
-            <h4>Cafe Study App</h4>
-            <p>This app allows students to track avaliability in
-              local cafe study spots. Check out my repository.</p>
-            <a href="https://github.com/cooogus/study-sure-app" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
-          </div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <h1>Projects</h1>
+        <p>Selected software work. Use the filters to narrow by type.</p>
+        <div class="filters" role="toolbar" aria-label="Project filters">
+          <button class="pill" data-filter="all" aria-pressed="true">All</button>
+          <button class="pill" data-filter="web" aria-pressed="false">Web</button>
+          <button class="pill" data-filter="mobile" aria-pressed="false">Mobile</button>
+          <button class="pill" data-filter="coursework" aria-pressed="false">Coursework</button>
         </div>
-        <div class="work">
-          <img src="images/personal website.png">
-          <div class="layer">
-            <h4>Personal Website</h4>
-            <p>This is my personal website and you're looking at it right now.
-            </p>
-            <a href="https://github.com/cooogus/cooogus-cave" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
-          </div>
-        </div>
-        <div class="work">
-          <img src="images/conversions.png">
-          <div class="layer">
-            <h4>Conversions Project</h4>
-            <p>This project was done for my intro to computer science class.
-              It converts one unit to the other.
-            </p>
-            <a href="https://github.com/cooogus/conversions" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
-          </div>
-        </div>
-        <div class="work">
-          <img src="images/genre website.png">
-          <div class="layer">
-            <h4>Genre Website</h4>
-            <p>This is a website that recommends a new album based on a 
-              user inputed genre.
-            </p>
-            <a href="https://github.com/cooogus/genre-website" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
-          </div>
+        <!-- Coursework notice: toggled by filter selection -->
+        <div id="cw-notice" class="notice" role="note" aria-live="polite" hidden>
+          <i class="fa-solid fa-lock" aria-hidden="true"></i>
+          <p>
+            Coursework repositories are private to discourage copying.
+            Email me at <a href="mailto:clara.ogus@outlook.com">clara.ogus@outlook.com</a> to request access.
+          </p>
         </div>
       </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="grid" id="projects-grid">
+          <!-- Telemetry App -->
+          <article class="card" data-tags="opentelemetry, openconfig, telegraf, prometheus, grafana">
+            <img src="images/telemetry.png" alt="Telemetry App" loading="lazy" decoding="async" />
+            <div class="card-body">
+              <h3>Telemetry App</h3>
+              <p>Utilizing OpenTelemetry, Openconfig, and Telegraf to create a Telemetry Pipeline</p>
+              <p class="tags"><span>OpenTelemetry</span><span>OpenConfig</span><span>Telegraf</span><span>Prometheus</span><span>Grafana</span></p>
+              <p class="actions">
+                <a class="btn" href="https://github.com/cooogus/telemetry-app-demo" target="_blank" rel="noopener" aria-label="Open GitHub repo for Cafe Study App">
+                  <i class="fa-solid fa-code-branch"></i> Code
+                </a>
+              </p>
+            </div>
+          </article>
+
+          <!-- Cafe Study App -->
+          <article class="card" data-tags="mobile,swift,firebase">
+            <img src="images/cafe.png" alt="Cafe Study App interface" loading="lazy" decoding="async" />
+            <div class="card-body">
+              <h3>Cafe Study App</h3>
+              <p>Real‑time seat availability for local cafes.</p>
+              <p class="tags"><span>Swift</span><span>Firebase</span><span>Firestore</span></p>
+              <p class="actions">
+                <a class="btn" href="https://github.com/cooogus/study-sure-app" target="_blank" rel="noopener" aria-label="Open GitHub repo for Cafe Study App">
+                  <i class="fa-solid fa-code-branch"></i> Code
+                </a>
+              </p>
+            </div>
+          </article>
+
+          <!-- Personal Website -->
+          <article class="card" data-tags="web,html,css">
+            <img src="images/personal website.png" alt="Personal website preview" loading="lazy" decoding="async" />
+            <div class="card-body">
+              <h3>Personal Website</h3>
+              <p>This portfolio site (you’re browsing it now).</p>
+              <p class="tags"><span>HTML</span><span>CSS</span></p>
+              <p class="actions">
+                <a class="btn" href="https://github.com/cooogus/Portfolio" target="_blank" rel="noopener" aria-label="Open GitHub repo for personal website">
+                  <i class="fa-solid fa-code-branch"></i> Code
+                </a>
+              </p>
+            </div>
+          </article>
+
+          <!-- Conversions Project (COURSEWORK / PRIVATE) -->
+          <article class="card" data-tags="coursework,C">
+            <img src="images/conversions.png" alt="Conversions project screenshot" loading="lazy" decoding="async" />
+            <div class="card-body">
+              <h3>Conversions Project</h3>
+              <p>Simple unit conversions for an intro CS course.</p>
+              <p class="tags"><span>C</span></p>
+              <p class="muted" style="margin-top:.35rem">
+                <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                Private repo — available by request
+              </p>
+              <p class="actions">
+                <a class="btn" href="mailto:clara.ogus@outlook.com?subject=Request%20access%20to%20Conversions%20Project%20(coursework)&body=Hi%20Clara%2C%0A%0AI%27d%20like%20to%20request%20read%20access%20to%20your%20coursework%20project%20%22Conversions%20Project%22.%0A%0AThanks!" aria-label="Email Clara to request access to Conversions Project">
+                  <i class="fa-solid fa-envelope"></i> Request access
+                </a>
+              </p>
+            </div>
+          </article>
+
+          <!-- Genre Website -->
+          <article class="card" data-tags="web,node">
+            <img src="images/genre website.png" alt="Genre-based album recommendation site" loading="lazy" decoding="async" />
+            <div class="card-body">
+              <h3>Genre Website</h3>
+              <p>Recommends a new album from a user-entered genre.</p>
+              <p class="tags"><span>Node</span><span>Express</span></p>
+              <p class="actions">
+                <a class="btn" href="https://github.com/cooogus/genre-website" target="_blank" rel="noopener" aria-label="Open GitHub repo for genre website">
+                  <i class="fa-solid fa-code-branch"></i> Code
+                </a>
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <small>© <span id="year"></span> Clara. All rights reserved.</small>
     </div>
-  </div>
-
-  <!-- javascript functionality -->
-  <script>
-    var sidemenu = document.getElementById("sidemenu");
-
-    function openmenu(){
-      // whenever right is 0 the menu will be visible
-      sidemenu.style.right = "0";
-    }
-
-    function closemenu(){
-      sidemenu.style.right = "-200px";
-    }
-
-  </script>
-
+  </footer>
 </body>
-
 </html>

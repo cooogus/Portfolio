@@ -1,72 +1,112 @@
 <!DOCTYPE html>
-<html>
-
-
+<html lang="en">
 <head>
-  <title>Clara's Website</title>
-  <link href="style.css" rel="stylesheet" type="text/css">
-  <script src="https://kit.fontawesome.com/9c03ce4cdc.js" crossorigin="anonymous"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clara — Portfolio</title>
+  <meta name="description" content="Projects, writing, and contact info for Clara." />
+  <link rel="icon" href="images/favicon.png" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://kit.fontawesome.com/9c03ce4cdc.js" crossorigin="anonymous" defer></script>
+  <script src="assets/js/site.js" defer></script>
 </head>
-
 <body>
-  <header>
-    <div class="container">
+  <a class="skip-link" href="#main">Skip to content</a>
 
-      <!-- <img width="100px" src="cat-solid.svg" alt="logo" class="logo"> -->
-      <nav>
+  <header>
+    <div class="container nav">
+      <div class="brand"><a href="index.html#home">Clara</a></div>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="sidemenu">Menu</button>
+      <nav aria-label="Primary">
         <ul id="sidemenu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html#home" aria-current="page">Home</a></li>
           <li><a href="projects.html">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
           <li><a href="blog.html">Blog</a></li>
-          <i class="fas fa-solid fa-xmark" onclick="closemenu()"></i>
         </ul>
-        <i class="fas fa-solid fa-bars" onclick="openmenu()"></i>
       </nav>
     </div>
   </header>
 
-
-
-
-  <main>
-    <h1>Home</h1>
-    <section class="about-me">
-      <div class="about-container">
-        <div class="about-image">
-          <img src="images/about.JPG" width="auto">
+  <main id="main">
+    <!-- HOME / HERO -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div>
+          <h1>Hi, I’m Clara.</h1>
+          <p class="lead">I build practical, delightful software—lately: student tools, telemetry pipelines, and ML‑adjacent projects. You’ll find highlights on my <a href="projects.html">Projects</a> page and ways to reach me below.</p>
+          <div class="actions">
+            <a class="btn primary" href="projects.html">View Projects</a>
+            <a class="btn" href="#contact">Get in touch</a>
+          </div>
         </div>
-        <div class="about-content">
-          <h2>About Me</h2>
-          <p>Welcome to my personal webpage! I am a current computer science
-            and engineering student at UC Davis going into my sophomore year.
-            This is my personal webpage to detail all the things I've been up
-            to in life from my programming projects to the latest book I'm reading!
-          </p>
-          <div class="social-links">
-            <a href="https://x.com/NightRavenNeko" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-            <a href="https://github.com/cooogus" target="_blank"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/clara-ogus-a80646187/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        <div class="card">
+          <p><strong>Currently</strong></p>
+          <ul>
+            <li>Computer Engineering/CS student; interning in AI/compute.</li>
+            <li>Exploring observability pipelines (OpenTelemetry → Prometheus + Grafana).</li>
+            <li>Trying to get my squat to 165, discover the best cafes in the bay area, & read as much as possible </li>
+          </ul>
+          <p class="muted">Resume and more details on request.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPTIONAL mini Projects teaser (kept small since full page exists) -->
+    <section class="section" aria-labelledby="proj-heading">
+      <div class="container">
+        <h2 id="proj-heading">Selected work</h2>
+        <p class="sub">A quick peek—see the full list on the <a href="projects.html">Projects</a> page.</p>
+        <div class="card">
+          <p><strong>Cafe Study App</strong> — Real‑time seat availability for local cafes. <em>Swift, Firebase</em>. <a href="https://github.com/cooogus/study-sure-app" target="_blank" rel="noopener">Code</a></p>
+          <p><strong>Genre Recommender</strong> — New album suggestions by genre. <em>Node, Express</em>. <a href="https://github.com/cooogus/genre-website" target="_blank" rel="noopener">Code</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section" aria-labelledby="contact-heading">
+      <div class="container contact-grid">
+        <div>
+          <h2 id="contact-heading">Contact</h2>
+          <p class="sub">Want to collaborate or chat about an idea? Send a note—I'll get back to you soon.</p>
+          <div class="card">
+            <p><strong>Email</strong><br/>
+              <a href="mailto:clara.ogus@outlook.com">clara.ogus@outlook.com</a>
+            </p>
+            <p><strong>Elsewhere</strong><br/>
+              <a href="https://github.com/cooogus" target="_blank" rel="noopener">GitHub</a> ·
+              <a href="https://www.linkedin.com/in/clara-ogus/" target="_blank" rel="noopener">LinkedIn</a>
+            </p>
+          </div>
+        </div>
+        <div>
+          <div class="card">
+            <!-- Replace action URL with your Formspree/Netlify Forms endpoint, or swap to mailto: fallback -->
+            <form action="https://formspree.io/f/your-id" method="POST">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+
+              <input type="hidden" name="_subject" value="Portfolio contact" />
+              <button class="btn primary" type="submit">Send</button>
+            </form> 
           </div>
         </div>
       </div>
     </section>
   </main>
-<!-- javascript functionality -->
-  <script>
-    var sidemenu = document.getElementById("sidemenu");
 
-    function openmenu(){
-      // whenever right is 0 the menu will be visible
-      sidemenu.style.right = "0";
-    }
-
-    function closemenu(){
-      sidemenu.style.right = "-200px";
-    }
-
-  </script>
+  <footer>
+    <div class="container">
+      <small>© <span id="year"></span> Clara. All rights reserved.</small>
+    </div>
+  </footer>
 </body>
-
 </html>

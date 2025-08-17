@@ -1,104 +1,112 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <title>Clara's Blog</title>
-  <link href="style.css" rel="stylesheet" type="text/css">
-  <script src="https://kit.fontawesome.com/9c03ce4cdc.js" crossorigin="anonymous"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clara — Blog</title>
+  <meta name="description" content="Notes on books, eats, and outings by Clara." />
+  <link rel="icon" href="images/favicon.png" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://kit.fontawesome.com/9c03ce4cdc.js" crossorigin="anonymous" defer></script>
+  <script src="assets/js/site.js" defer></script>
 </head>
-
 <body>
-  <header>
-    <div class="container">
+  <a class="skip-link" href="#main">Skip to content</a>
 
-      <nav>
+  <header>
+    <div class="container nav">
+      <div class="brand"><a href="index.html#home">Clara</a></div>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="sidemenu">Menu</button>
+      <nav aria-label="Primary">
         <ul id="sidemenu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html#home">Home</a></li>
           <li><a href="projects.html">Projects</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <i class="fas fa-solid fa-xmark" onclick="closemenu()"></i>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="blog.html" aria-current="page">Blog</a></li>
         </ul>
-        <i class="fas fa-solid fa-bars" onclick="openmenu()"></i>
       </nav>
     </div>
   </header>
 
-  <!-- Blog Section -->
-  <section id="blog">
-    <div class="blog-heading">
-      <span>My Recent Posts</span>
-      <h2>Blog</h2>
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <h1>Blog</h1>
+        <p>Recent reads, eats, and adventures.</p>
+        <div class="filters" role="toolbar" aria-label="Post filters">
+          <button class="pill" data-filter="all" aria-pressed="true">All</button>
+          <button class="pill" data-filter="read" aria-pressed="false">Reads</button>
+          <button class="pill" data-filter="eat" aria-pressed="false">Eats</button>
+          <button class="pill" data-filter="event" aria-pressed="false">Events</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="grid" id="posts-grid">
+          <!-- Post: New Read -->
+        <article class="card" data-kind="read">
+          <img src="images/books/fancy-bear.jpg" alt="Cover of Fancy Bear Goes Phishing by Scott J. Shapiro" loading="lazy" decoding="async" />
+          <div class="card-body">
+            <p class="meta"><time datetime="2025-08-10">August 08, 2025</time> · Read</p>
+            <h3><a href="read-fancy-bear.html">Fancy Bear Goes Phishing — Scott J. Shapiro</a></h3>
+            <p class="excerpt">Intriguing cybersecurity book written by author with unconvential background.</p>
+            <div class="actions">
+              <a class="btn" href="read-fancy-bear.html"><i class="fa-solid fa-book-open"></i> Read more</a>
+            </div>
+          </div>
+        </article>
+
+          <!-- Post: Latest Read -->
+          <article class="card" data-kind="read">
+            <img src="images/books/frost-files.jpeg" alt="books" loading="lazy" decoding="async" />
+            <div class="card-body">
+              <p class="meta"><time datetime="2024-07-11">July 11, 2024</time> · Read</p>
+              <h3><a href="read-frost-files.html">Random Sh*t Flying Through the Air — Jackson Ford</a></h3>
+              <p class="excerpt">Fast, funny, and tense without losing the stakes. A sequel that appears to be warranted.</p>
+              <div class="actions">
+                <a class="btn" href="read-frost-files.html"><i class="fa-solid fa-book-open"></i> Read more</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Post: Latest Eat -->
+          <article class="card" data-kind="eat">
+            <img src="images/food2.jpeg" alt="Plate with biscuits at Geraldine's Counter in Seattle" loading="lazy" decoding="async" />
+            <div class="card-body">
+              <p class="meta"><time datetime="2024-07-10">July 10, 2024</time> · Eat</p>
+              <h3><a href="eat.html">Geraldine’s Counter (Seattle)</a></h3>
+              <p class="excerpt">Cozy Columbia City spot with an unreal biscuit. Perfect for Sunday Brunch with friends.</p>
+              <div class="actions">
+                <a class="btn" href="eat.html"><i class="fa-solid fa-utensils"></i> Read more</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Post: Latest Event -->
+          <article class="card" data-kind="event">
+            <img src="images/sf.jpeg" alt="View of San Francisco skyline on a sunny day" loading="lazy" decoding="async" />
+            <div class="card-body">
+              <p class="meta"><time datetime="2024-05-25">May 25, 2024</time> · Event</p>
+              <h3><a href="event.html">Day Trip to San Francisco</a></h3>
+              <p class="excerpt">Quick Bay Area escape with friends—nice to get beyond campus and wander.</p>
+              <div class="actions">
+                <a class="btn" href="event.html"><i class="fa-solid fa-location-dot"></i> Read more</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <small>© <span id="year"></span> Clara. All rights reserved.</small>
     </div>
-
-    <div class="blog-container">
-      <!-- latest read -->
-      <div class="blog-box">
-        <div class="blog-img">
-          <img src="images/book.jpeg">
-        </div>
-        <div class="blog-text">
-          <span>11 July 2024 / Latest Read</span>
-          <a href="#" class="blog-title">Random Sh*t Flying Through the Air by Jackson Ford</a>
-          <p>I read the first book in this series around this time last year and
-            enjoyed every bit of it. Ford is able to flip between tension and humor
-            like that without losing any of the gravity of the situation. He does
-            "marvel" humor right. The sequel does not stray far from what made the
-            first book work either. It does not suffer from sequel-itis and
-            continues to develop these intriguing characters. I'm excited to
-            read the next in the series!</p>
-          <a href="read.html">Read More</a>
-        </div>
-      </div>
-      <!-- latest eat -->
-      <div class="blog-box">
-        <div class="blog-img">
-          <img src="images/food2.jpeg">
-        </div>
-        <div class="blog-text">
-          <span>10 July 2024 / Latest Eat</span>
-          <a href="#" class="blog-title">Geraldine's Counter Restaurant</a>
-          <p>In typical foodie fashion, I went out to brunch the other day to a little
-            Mom and Pop shop in the Columbia City district of Seattle. The interior was
-            pleasant and the food was amazing. I had possibly the best biscuit I have ever
-            had in my life.
-          </p>
-          <a href="eat.html">Read More</a>
-        </div>
-      </div>
-      <!-- latest event -->
-      <div class="blog-box">
-        <div class="blog-img">
-          <img src="images/sf.jpeg">
-        </div>
-        <div class="blog-text">
-          <span>25 May 2024 / Latest Event</span>
-          <a href="#" class="blog-title">Day Trip to San Francisco</a>
-          <p>I recently went out to the great city of San Francisco with a few friends.
-            We try to go out and explore the area around Davis everyonce and a while
-            to just get a feel for the Bay Are beyond our little college town.
-          </p>
-          <a href="event.html">Read More</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- javascript functionality -->
-  <script>
-    var sidemenu = document.getElementById("sidemenu");
-
-    function openmenu() {
-      // whenever right is 0 the menu will be visible
-      sidemenu.style.right = "0";
-    }
-
-    function closemenu() {
-      sidemenu.style.right = "-200px";
-    }
-
-  </script>
+  </footer>
 </body>
-
 </html>
