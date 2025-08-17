@@ -1,2 +1,2 @@
 # Portfolio
-first attempt at a personal website built using html and css
+updated website for junior year with more projects + extra reading post
