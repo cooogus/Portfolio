@@ -28,7 +28,6 @@
     if (y) y.textContent = new Date().getFullYear();
   })();
   
-  // --- Projects page filters ---
   (function(){
     const pills = document.querySelectorAll('.filters .pill');
     const grid = document.getElementById('projects-grid');
@@ -61,7 +60,6 @@
     applyFilter(active ? active.dataset.filter : 'all');
   })();
   
-  // --- Blog page filters ---
   (function () {
     const pills = document.querySelectorAll('.filters .pill');
     const grid  = document.getElementById('posts-grid');
@@ -90,4 +88,6 @@
     const active = Array.from(pills).find(x => x.getAttribute('aria-pressed') === 'true') || pills[0];
     applyFilter(active ? active.dataset.filter : 'all');
   })();
+
+
   

@@ -30,7 +30,7 @@
   .brand a{text-decoration:none}
   
   /* Desktop defaults */
-  .menu-toggle{display:none}
+  .menu-toggle{ display: none; } 
   #sidemenu{list-style:none;margin:0;padding:0;display:flex;gap:14px}
   #sidemenu a{display:inline-block;text-decoration:none;padding:.5rem .6rem;border-radius:.6rem}
   #sidemenu a[aria-current="page"], #sidemenu a:hover{background:var(--surface-2)}
