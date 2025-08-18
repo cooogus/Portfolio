@@ -83,19 +83,25 @@
         <div>
           <div class="card">
             <!-- Replace action URL with your Formspree/Netlify Forms endpoint, or swap to mailto: fallback -->
-            <form action="https://formspree.io/f/your-id" method="POST">
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
+              <input type="hidden" name="form-name" value="contact">
+              <p hidden>
+                <label>Don’t fill this out: <input name="bot-field"></label>
+              </p>
+            
               <label for="name">Name</label>
               <input id="name" name="name" type="text" autocomplete="name" required />
-
+            
               <label for="email">Email</label>
               <input id="email" name="email" type="email" autocomplete="email" required />
-
+            
               <label for="message">Message</label>
               <textarea id="message" name="message" required></textarea>
-
+            
               <input type="hidden" name="_subject" value="Portfolio contact" />
-              <button class="btn primary" type="submit">Send</button>
-            </form> 
+              <button class="btn primary" type="submit">Send</button>  <!-- or .btn primary if you want it orange -->
+            </form>
+            
           </div>
         </div>
       </div>
