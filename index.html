@@ -82,8 +82,7 @@
         </div>
         <div>
           <div class="card">
-            <!-- Replace action URL with your Formspree/Netlify Forms endpoint, or swap to mailto: fallback -->
-            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="thanks.html"accept-charset="UTF-8">
               <input type="hidden" name="form-name" value="contact">
               <p hidden>
                 <label>Don’t fill this out: <input name="bot-field"></label>
@@ -99,7 +98,7 @@
               <textarea id="message" name="message" required></textarea>
             
               <input type="hidden" name="_subject" value="Portfolio contact" />
-              <button class="btn primary" type="submit">Send</button>  <!-- or .btn primary if you want it orange -->
+              <button class="btn primary" type="submit">Send</button>  
             </form>
             
           </div>
