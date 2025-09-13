@@ -89,5 +89,36 @@
     applyFilter(active ? active.dataset.filter : 'all');
   })();
 
+  // --- Simple lightbox for images wrapped in [data-lightbox] links ---
+ // How to use: wrap any image in <a data-lightbox href="FULL_IMAGE.jpg">…</a> to make it clickable.
+(function(){
+  const overlay = document.createElement('div');
+  overlay.className = 'lightbox-backdrop';
+  overlay.innerHTML = '<img alt="Expanded image">';
+  document.body.appendChild(overlay);
+  const big = overlay.querySelector('img');
+
+  function openLightbox(src, alt){
+    big.src = src; big.alt = alt || '';
+    overlay.classList.add('open');
+  }
+  function closeLightbox(){
+    overlay.classList.remove('open'); big.src = '';
+  }
+
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('[data-lightbox]');
+    if (a){
+      e.preventDefault();
+      const img = a.querySelector('img');
+      openLightbox(a.getAttribute('href') || img?.src, img?.alt || a.getAttribute('aria-label'));
+    } else if (e.target === overlay){
+      closeLightbox();
+    }
+  });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+})();
+
+
 
   

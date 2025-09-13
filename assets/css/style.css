@@ -91,17 +91,8 @@
   
   /* Single post pages */
   .post{padding:16px 0 32px}
-  .post-grid{display:grid;grid-template-columns:420px 1fr;gap:28px;align-items:start}
   .cover{background:var(--surface);border:1px solid #1b2536;border-radius:var(--radius);overflow:hidden}
   
-/* Single-post hero image: keep natural aspect ratio (no cropping) */
-.post .cover img{
-  width: 100%;
-  height: auto;
-  aspect-ratio: auto;   /* override the forced ratio */
-  object-fit: unset;    /* don't crop */
-  display: block;
-}
 
 /* (keep rounded corners on the container) */
 .post .cover{
@@ -154,3 +145,28 @@
   @media (max-width: 980px){
     .hero-inner, .contact-grid, .post-grid{grid-template-columns:1fr}
   }
+/* Post layout: left media rail + right content */
+.post-grid{ display:grid; grid-template-columns:420px 1fr; gap:28px; align-items:start; }
+
+/* Turn the left column into a vertical gallery */
+.post .cover{
+  display: grid;
+  gap: 12px;
+  background: transparent;   /* remove single big card look */
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  overflow: visible;          /* allow captions to breathe */
+}
+
+/* Individual images in the left rail */
+.post .cover figure{ margin: 0; }
+.post .cover img{
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: unset;          /* no cropping */
+  display: block;
+  border-radius: 12px;
+}
+
