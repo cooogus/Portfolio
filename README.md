@@ -1,2 +1,2 @@
 # Portfolio
-updated website for junior year with more projects + extra reading post
+Welcome to my portfolio! It was made using HTML, CSS, + JS and love
