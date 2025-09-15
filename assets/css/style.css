@@ -106,7 +106,6 @@
   .rating{display:inline-flex;align-items:center;gap:6px}
   .stars{letter-spacing:2px}
 
-/* Primary buttons = solid orange */
 .btn.primary{
   background: var(--brand);
   color: #1b1b1b;
@@ -117,7 +116,6 @@
   box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand) 35%, transparent);
 }
 
-/* 2) Give text-only cards padding and stop clipping */
 .hero .card,
 .section .card,
 .contact-grid .card{
@@ -126,7 +124,6 @@
   border-radius: var(--radius);
 }
 
-/* Optional: nicer list spacing inside those cards */
 .hero .card ul,
 .section .card ul,
 .contact-grid .card ul{
@@ -135,7 +132,6 @@
   list-style-position: outside;
 }
 
-/* Optional: nicer list spacing inside cards */
 .card ul{ margin: .5rem 0 0; padding-left: 1.2rem; }
   
   /* Footer */
@@ -145,6 +141,7 @@
   @media (max-width: 980px){
     .hero-inner, .contact-grid, .post-grid{grid-template-columns:1fr}
   }
+
 /* Post layout: left media rail + right content */
 .post-grid{ display:grid; grid-template-columns:420px 1fr; gap:28px; align-items:start; }
 
